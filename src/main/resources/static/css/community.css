@@ -1,0 +1,27 @@
+body {
+    background-color: #efefef;
+    font-family: candara,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","WenQuanYi Micro Hei","Microsoft Yahei",sans-serif, -apple-system;
+    -webkit-font-smoothing: antialiased;
+}
+p {
+    padding: 10px 0;
+    color: #999;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.main {
+    background-color: white;
+    margin: 30px;
+}
+.btn-publish {
+    float: right;
+    margin-bottom: 15px;
+}
+.problem {
+    border-right-style:solid;
+    border-right-width:1px;
+    border-right-color:#efefef;
+}

@@ -8,7 +8,7 @@ github:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/springbootcommunity
+    url: jdbc:mysql://localhost:3306/springbootcommunity?useUnicode=true&characterEncoding=utf-8
     username: root
     password: hzs121914
     driver-class-name: com.mysql.jdbc.Driver
