@@ -20,7 +20,6 @@ public class PublishController {
     private QuestionMapper questionMapper;
     @Autowired
     private UserMapper userMapper;
-
     @GetMapping("/publish")
     public String publish() {
         return "publish";
@@ -42,6 +41,7 @@ public class PublishController {
                 if ("token".equals(cookie.getName())) {
                     String token = cookie.getValue();
                     user = userMapper.findByToken(token);
+                    System.out.println("通过ToKen查到的User信息: " + user);
                     if (user != null) {
                         request.getSession().setAttribute("user", user);
                     }
@@ -72,7 +72,7 @@ public class PublishController {
         question.setTitle(title);
         question.setDescription(description);
         question.setTag(tag);
-        question.setCreator(user.getId());
+        question.setCreator(user.getAccountId());
         question.setGmtCreate(System.currentTimeMillis());
         question.setGmtModified(System.currentTimeMillis());
         questionMapper.create(question);

@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Question {
+public class Question implements Serializable {
     private Integer id;
     private String title;
     private String description;
@@ -17,5 +19,5 @@ public class Question {
     private Integer viewCount;
     private Integer likeCount;
     private Integer commentCount;
-    private Integer creator;
+    private String creator;
 }

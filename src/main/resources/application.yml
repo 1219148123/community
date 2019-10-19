@@ -12,3 +12,24 @@ spring:
     username: root
     password: hzs121914
     driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    database: 0
+    host: 47.103.4.57
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
+    timeout: 1200
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    lazy-loading-enabled: true
+    aggressive-lazy-loading: false
+    cache-enabled: true
+    
