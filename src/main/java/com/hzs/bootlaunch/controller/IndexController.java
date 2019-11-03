@@ -7,6 +7,7 @@ import com.hzs.bootlaunch.model.Question;
 import com.hzs.bootlaunch.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.Cookie;
@@ -20,7 +21,8 @@ public class IndexController {
     @Autowired
     private QuestionMapper questionMapper;
     @GetMapping("/")
-    public String greeting(HttpServletRequest request) {
+    public String greeting(HttpServletRequest request,
+                           Model model) {
         Cookie[] cookies = request.getCookies();
         User user = null;
         if (cookies != null) {
@@ -39,7 +41,7 @@ public class IndexController {
         for (Question question : questions) {
             System.out.println(question);
         }
-
+        model.addAttribute("questions",questions);
         return "index";
     }
 
